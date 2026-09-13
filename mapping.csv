@@ -907,7 +907,7 @@ id,locality,locality_aka,state,country,iso3,continent,lat,lon,gmp,population_loc
 906,Planken,[],,Liechtenstein,LIE,Europe,47.1858848,9.5452211,0.0,478,41024,,,171.53,44.1,,0.0,[SIi1fFNRGTU],[[0]],[[39]],[[191]],[0],[28052023],[UCOpfzYU2yx_D4Ve1qJqfyhA]
 907,Raggal,[],,Austria,AUT,Europe,47.209833,9.837458,0.0,864,9208163,4.9,,172.73,44.8,31.2,0.0,[XsQuWRGgGNk],[[0]],[[104]],[[159]],[0],[14102021],[UCOTltJnsvy8V9ku46nARF6w]
 908,Ludesch,[],,Austria,AUT,Europe,47.1954575,9.7826125,0.0,3371,9208163,4.9,,172.73,44.8,31.2,0.0,[XsQuWRGgGNk],[[0]],[[485]],[[582]],[0],[14102021],[UCOTltJnsvy8V9ku46nARF6w]
-909,Thüringen,[Thuringen],,Austria,AUT,Europe,47.2,9.76667,0.0,2222,9208163,4.9,,172.73,44.8,31.2,0.0,[XsQuWRGgGNk],[[0]],[[604]],[[700]],[0],[14102021],[UCOTltJnsvy8V9ku46nARF6w]
+909,Thüringen,[Thuringen],,Austria,AUT,Europe,47.199861,9.766330,0.0,2222,9208163,4.9,,172.73,44.8,31.2,0.0,[XsQuWRGgGNk],[[0]],[[604]],[[700]],[0],[14102021],[UCOTltJnsvy8V9ku46nARF6w]
 910,Bludesch,[],,Austria,AUT,Europe,47.1995763,9.7464679,0.0,2364,9208163,4.9,,172.73,44.8,31.2,0.0,[XsQuWRGgGNk],[[0]],[[700]],[[919]],[0],[14102021],[UCOTltJnsvy8V9ku46nARF6w]
 911,Schlins,[],,Austria,AUT,Europe,47.2049457,9.6978746,0.0,2404,9208163,4.9,,172.73,44.8,31.2,0.0,[XsQuWRGgGNk],[[0]],[[948]],[[1061]],[0],[14102021],[UCOTltJnsvy8V9ku46nARF6w]
 912,Satteins,[],,Austria,AUT,Europe,47.2251166,9.6720215,0.0,2703,9208163,4.9,,172.73,44.8,31.2,0.0,[XsQuWRGgGNk],"[[0,0]]","[[1145,1163]]","[[1162,1219]]",[0],[14102021],[UCOTltJnsvy8V9ku46nARF6w]
@@ -994,7 +994,7 @@ id,locality,locality_aka,state,country,iso3,continent,lat,lon,gmp,population_loc
 993,Zanzibar,[],,Tanzania,TZA,Africa,-6.1664908,39.2074312,0.0,219007,70545865,31.1,84.25,161.93,18.0,40.5,0.0,"[eeXx5CHxnjE,ND-JKAvjEmc]","[[0],[0]]","[[0],[9]]","[[1350],[1645]]","[0,0]","[21122024,19022022]","[UCH5SUm0gRUj6P-BbUurgMTg,UCaGuw7dQ0zBlzX1gS0h7bjw]"
 994,Mwanza,[],,Tanzania,TZA,Africa,-2.521235,32.898905,0.0,1311000,70545865,31.1,84.25,161.93,18.0,40.5,0.0,[CAaXe-d5cXE],[[0]],[[120]],[[329]],[0],[17072022],[UCvJxyqsKtq7eJr0kNKrTCpA]
 995,Dembeni,[],,Mayotte,MYT,Africa,-12.8433081,45.1839954,0.0,10141,,,,162.5,17.3,,0.0,[fX2j1xp0CQ8],[[0]],[[0]],[[240]],[0],[25062023],[UCAIAb-x7jqFZzdHEBzXBsQA]
-996,Combani,[],,Mayotte,MYT,Africa,-12.8,45.16667,0.0,6665,,,,162.5,17.3,,0.0,[fX2j1xp0CQ8],[[0]],[[352]],[[733]],[0],[25062023],[UCAIAb-x7jqFZzdHEBzXBsQA]
+996,Combani,[],,Mayotte,MYT,Africa,-12.787696,45.132495,0.0,6665,,,,162.5,17.3,,0.0,[fX2j1xp0CQ8],[[0]],[[352]],[[733]],[0],[25062023],[UCAIAb-x7jqFZzdHEBzXBsQA]
 997,Saint-Denis,[],,Réunion,REU,Africa,-20.8799889,55.448137,0.0,154765,,,,162.5,38.4,,0.0,"[MGkZAFS1yjU,duHdXW-NS2A,ul9L9fFQerE]","[[0],[0],[0]]","[[100],[25],[38]]","[[1275],[1300],[1975]]","[0,0,0]","[16022023,20072023,31032025]","[UCE9THn93-ioOyKQIg6EHo2Q,UCE9THn93-ioOyKQIg6EHo2Q,UCE9THn93-ioOyKQIg6EHo2Q]"
 998,Sainte-Suzanne,[],,Réunion,REU,Africa,-20.9043227,55.6061552,0.0,24293,,,,162.5,38.4,,0.0,[qIB7ZXpDRaw],"[[0,0]]","[[37,706]]","[[705,1788]]",[0],[2062023],[UCE9THn93-ioOyKQIg6EHo2Q]
 999,Bras Panon,[],,Réunion,REU,Africa,-20.9987435,55.6847941,0.0,13344,,,,162.5,38.4,,0.0,[qIB7ZXpDRaw],[[0]],[[1837]],[[2438]],[0],[2062023],[UCE9THn93-ioOyKQIg6EHo2Q]
@@ -1072,7 +1072,7 @@ id,locality,locality_aka,state,country,iso3,continent,lat,lon,gmp,population_loc
 1071,Ena,[],,Kenya,KEN,Africa,-0.4709408,37.5578958,0.0,2796,57532493,28.3,87.49,164.94,20.1,38.5,0.0,"[UM27EIAsq28,ID_q1RC_dSo]","[[0],[0]]","[[35],[7235]]","[[118],[7425]]","[0,0]","[28092024,31082024]","[UCmKcQFlFJjc4ruSf2clPM-w,UCmKcQFlFJjc4ruSf2clPM-w]"
 1072,Karurumo,[],,Kenya,KEN,Africa,-0.473069,37.650786,0.0,5802,57532493,28.3,87.49,164.94,20.1,38.5,0.0,"[UM27EIAsq28,ID_q1RC_dSo]","[[0],[0]]","[[670],[6907]]","[[830],[7008]]","[0,0]","[28092024,31082024]","[UCmKcQFlFJjc4ruSf2clPM-w,UCmKcQFlFJjc4ruSf2clPM-w]"
 1073,Kanyuambora,[],,Kenya,KEN,Africa,-0.4666,37.7166,0.0,6021,57532493,28.3,87.49,164.94,20.1,38.5,0.0,[UM27EIAsq28],[[0]],[[1030]],[[1209]],[0],[28092024],[UCmKcQFlFJjc4ruSf2clPM-w]
-1074,Ishiara,[],,Kenya,KEN,Africa,-0.45,37.7833,0.0,1349,57532493,28.3,87.49,164.94,20.1,38.5,0.0,[UM27EIAsq28],"[[0,0]]","[[1510,1839]]","[[1675,2003]]",[0],[28092024],[UCmKcQFlFJjc4ruSf2clPM-w]
+1074,Ishiara,[],,Kenya,KEN,Africa,-0.450092,37.783098,0.0,1349,57532493,28.3,87.49,164.94,20.1,38.5,0.0,[UM27EIAsq28],"[[0,0]]","[[1510,1839]]","[[1675,2003]]",[0],[28092024],[UCmKcQFlFJjc4ruSf2clPM-w]
 1075,Kathwana,[],,Kenya,KEN,Africa,-0.3295867,37.8676825,0.0,59600,57532493,28.3,87.49,164.94,20.1,38.5,0.0,[UM27EIAsq28],[[0]],[[2644]],[[3030]],[0],[28092024],[UCmKcQFlFJjc4ruSf2clPM-w]
 1076,Mitunguu,[],,Kenya,KEN,Africa,-0.1083875,37.7808302,0.0,3293,57532493,28.3,87.49,164.94,20.1,38.5,0.0,[UM27EIAsq28],"[[0,0]]","[[4740,5425]]","[[5287,5604]]",[0],[28092024],[UCmKcQFlFJjc4ruSf2clPM-w]
 1077,Chaaria,[],,Kenya,KEN,Africa,-0.012878,37.7677259,0.0,3390,57532493,28.3,87.49,164.94,20.1,38.5,0.0,[UM27EIAsq28],[[0]],[[6071]],[[6400]],[0],[28092024],[UCmKcQFlFJjc4ruSf2clPM-w]
