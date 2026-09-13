@@ -168,7 +168,11 @@ def extract_locality_autocomplete(file_path):
 
 def load_csv(file_path):
     if os.path.exists(file_path):
-        return pd.read_csv(file_path)
+        df = pd.read_csv(file_path)
+        for col in ('population_locality', 'population_country'):
+            if col in df.columns:
+                df[col] = df[col].astype('Int64')
+        return df
     else:
         return pd.DataFrame(columns=[
             'locality', 'locality_aka', 'state', 'country', 'iso3', 'videos',
