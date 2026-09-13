@@ -180,6 +180,9 @@ def load_csv(file_path):
 
 
 def save_csv(df, file_path):
+    for col in ('population_locality', 'population_country'):
+        if col in df.columns:
+            df[col] = df[col].astype('Int64')
     df.to_csv(file_path, index=False)
 
 
@@ -1258,8 +1261,8 @@ def form():
                             'start_time': compact_nested_list([[int(x) for x in start_time]]),
                             'end_time': compact_nested_list([[int(x) for x in end_time]]),
                             'gmp': gmp,
-                            'population_locality': population_locality,
-                            'population_country': population_country,
+                            'population_locality': to_int_safe(population_locality),
+                            'population_country': to_int_safe(population_country),
                             'traffic_mortality': traffic_mortality,
                             'continent': continent,
                             'literacy_rate': literacy_rate,
