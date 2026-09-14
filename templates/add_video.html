@@ -784,8 +784,12 @@
 const input = document.getElementById("locality");
 const box = document.getElementById("locality-suggestions");
 
+let reqId = 0;
+
 input.addEventListener("input", async () => {
     const q = input.value.trim();
+    // invalidates any in-flight request, so only the newest one renders
+    const myReq = ++reqId;
     box.innerHTML = "";
     box.classList.remove("has-items");
 
@@ -794,6 +798,8 @@ input.addEventListener("input", async () => {
     try {
         const res = await fetch(`/autocomplete/localities?q=${encodeURIComponent(q)}`);
         const localities = await res.json();
+
+        if (myReq !== reqId) return;
 
         if (localities.length === 0) return;
 

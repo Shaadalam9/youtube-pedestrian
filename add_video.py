@@ -20,6 +20,7 @@ import re
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut, GeocoderUnavailable, GeocoderServiceError
 from datetime import datetime
+from functools import lru_cache
 
 app = Flask(__name__)
 
@@ -56,19 +57,17 @@ def format_locality_label(locality, state, country, iso3):
     return f"{locality}, {country} ({iso3})"
 
 
-@app.route("/autocomplete/localities")
-def autocomplete_localities():
-    q = request.args.get("q", "").strip().lower()
-    if len(q) < 2:
-        return []
+@lru_cache(maxsize=1)
+def _build_locality_index(_mtime_ns):
+    """(normalized_name, entry) pairs covering every locality and alt name.
 
+    Keyed on the mapping file's mtime so it is rebuilt only after a save
+    rather than on every keystroke.
+    """
     df = load_csv(FILE_PATH)
 
-    results = []
+    index = []
     seen = set()
-
-    def normalize(s):
-        return s.strip().lower()
 
     for _, row in df.iterrows():
         locality = row.get("locality")
@@ -79,60 +78,49 @@ def autocomplete_localities():
         if not all(isinstance(x, str) for x in [locality, country]):
             continue
 
-        locality_norm = normalize(locality)
-        state_norm = normalize(state) if isinstance(state, str) else ""
+        state_norm = state.strip().lower() if isinstance(state, str) else ""
 
-        key = (locality_norm, state_norm, country, iso3)
+        names = [locality.strip()]  # pyright: ignore[reportOptionalMemberAccess]
+        aka = row.get("locality_aka")
+        if isinstance(aka, str) and aka.startswith("[") and aka.endswith("]"):
+            names += [item.strip() for item in aka[1:-1].split(",") if item.strip()]
 
-        if q in locality_norm and key not in seen:
+        for name in names:
+            name_norm = name.lower()
+            key = (name_norm, state_norm, country, iso3)
+            if key in seen:
+                continue
             seen.add(key)
-            results.append({
-                "locality": locality.strip(),  # pyright: ignore[reportOptionalMemberAccess]
+
+            index.append((name_norm, {
+                "locality": name,
                 "state": state if isinstance(state, str) else "",
                 "country": country,
                 "iso3": iso3,
-                "label": format_locality_label(
-                    locality.strip(),  # pyright: ignore[reportOptionalMemberAccess]
-                    state,
-                    country,
-                    iso3
-                )
-            })
+                "label": format_locality_label(name, state, country, iso3)
+            }))
 
-        aka = row.get("locality_aka")
-        if isinstance(aka, str) and aka.startswith("[") and aka.endswith("]"):
-            for item in aka[1:-1].split(","):
-                name = item.strip()
-                if not name:
-                    continue
+    return index
 
-                name_norm = normalize(name)
-                state_norm = normalize(state) if isinstance(state, str) else ""
-                key = (name_norm, state_norm, country, iso3)
 
-                if q in name_norm and key not in seen:
-                    seen.add(key)
-                    results.append({
-                        "locality": name,
-                        "state": state if isinstance(state, str) else "",
-                        "country": country,
-                        "iso3": iso3,
-                        "label": format_locality_label(
-                            name,
-                            state,
-                            country,
-                            iso3
-                        )
-                    })
+def get_locality_index():
+    try:
+        mtime_ns = os.stat(FILE_PATH).st_mtime_ns
+    except OSError:
+        mtime_ns = 0
+    return _build_locality_index(mtime_ns)
 
-    results.sort(
-        key=lambda x: (
-            not normalize(x["locality"]).startswith(q),
-            normalize(x["locality"])
-        )
-    )
 
-    return results
+@app.route("/autocomplete/localities")
+def autocomplete_localities():
+    q = request.args.get("q", "").strip().lower()
+    if len(q) < 2:
+        return []
+
+    matches = [pair for pair in get_locality_index() if q in pair[0]]
+    matches.sort(key=lambda pair: (not pair[0].startswith(q), pair[0]))
+
+    return [entry for _, entry in matches]
 
 
 def extract_locality_autocomplete(file_path):
